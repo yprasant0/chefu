@@ -1,10 +1,10 @@
 <%= render 'shared/page_title', title: "showing all recipes" %>
-<h1 align="center">Listing all recipes</h1>
+
 <% @recipes.each do |recipe| %>
   <div class="row">
     <div class="col-md-2">
-      <section class="center">
-
+      <section class="chef_info center">
+        <%= gravatar_for(recipe.chef, size: 120) %>
       </section>
     </div>
     <div class="col-md-8 well">
@@ -13,8 +13,11 @@
       <p>
         <span class="quiet"><small>Created
 
-          <%= time_ago_in_words(recipe.created_at) %> ago</small></span>
+          <%= time_ago_in_words(recipe.created_at) %>
+
+          ago</small></span>
       </p>
     </div>
   </div>
 <% end %>
+
